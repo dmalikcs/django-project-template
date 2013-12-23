@@ -1,1 +1,2 @@
-+++ Django Project templates
+Django Project templates
+========================
