@@ -4,4 +4,4 @@ Django Project templates
 Installation
 ------------
 
-django-admin.py startproject --template="https://github.com/dmalikcs/django-project-template.git" project_name
+django-admin.py startproject --template=https://github.com/dmalikcs/django-project-template/archive/master.zip -name="Readme.md" project_name
