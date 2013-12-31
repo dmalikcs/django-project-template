@@ -131,6 +131,8 @@ INSTALLED_APPS = (
     #3rd part Application
     'south',
     'test_pep8'
+
+    {{ project_name }},
 )
 
 # A sample logging configuration. The only tangible logging
