@@ -132,7 +132,7 @@ INSTALLED_APPS = (
     'south',
     'test_pep8'
 
-    {{ project_name }},
+    '{{ project_name }}',
 )
 
 # A sample logging configuration. The only tangible logging
