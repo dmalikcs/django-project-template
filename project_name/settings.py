@@ -130,7 +130,7 @@ INSTALLED_APPS = (
 
     #3rd part Application
     'south',
-    'test_pep8'
+    'test_pep8',
 
     '{{ project_name }}',
 )
