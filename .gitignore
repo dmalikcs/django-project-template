@@ -11,6 +11,6 @@ media/*
 !.gitkeep
 .sass-cache/
 tmp/
-settings_local.py
+#settings_local.py
 build/
 backups/
