@@ -30,3 +30,4 @@
 ### Django pep8 testing
 #django-test-pep8
 #python-memcached
+#flup
