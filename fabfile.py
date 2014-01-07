@@ -1,11 +1,15 @@
 from fabric.api import local
+import os
+import sys
+from fabric.contrib import django
+sys.path.append(os.getcwd())
+django.project("{{ project_name }}")
 
 
-def installapp(app_name=None, app_type=None):
-    if app_type == 'tastypie':
-        template = 'https://github.com/dmalikcs/django-tastypie-app-template/archive/master.zip'
-    elif app_type == 'celery':
-        template = 'https://github.com/dmalikcs/django-celery-app-template/archive/master.zip'
-    else:
-        template = 'https://github.com/dmalikcs/django-app-template/archive/master.zip'
-    local("python manage.py startapp --template=%s %s" % (template, app_name, ))
+def setup():
+    src_static = "%s/static/" % os.getcwd()
+    dst_static = "%s/%s/%s" % (os.getcwd(), os.pardir, "static")
+    src_media = "%s/media/" % os.getcwd()
+    dst_media = "%s/%s/%s" % (os.getcwd(), os.pardir, "media")
+    local("ln -s %s %s" % (src_static, dst_static))
+    local("ln -s %s %s" % (src_media, dst_media))

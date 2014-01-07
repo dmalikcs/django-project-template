@@ -31,3 +31,4 @@
 #django-test-pep8
 #python-memcached
 #flup
+#fabric
