@@ -1,4 +1,5 @@
 #-e git://github.com/fusionbox/django-fusionbox.git#egg=django_fusionbox
+mezzanine
 Django
 South
 #Werkzeug
