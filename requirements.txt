@@ -2,6 +2,7 @@
 mezzanine
 Django
 South
+pysqlite
 #Werkzeug
 #django-cachebuster
 #django-compressor
