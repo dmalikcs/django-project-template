@@ -19,10 +19,10 @@ urlpatterns = patterns('',
                        )
 
 urlpatterns += i18n_patterns("",
-    # Change the admin prefix here to use an alternate URL for the
-    # admin interface, which would be marginally more secure.
-    ("^admin/", include(admin.site.urls)),
-)
+                             # Change the admin prefix here to use an alternate URL for the
+                             # admin interface, which would be marginally more secure.
+                             ("^admin/", include(admin.site.urls)),
+                             )
 
 urlpatterns += patterns('',
 
@@ -96,6 +96,15 @@ urlpatterns += patterns('',
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
 # pages can use JS, CSS and images.
+if 'debug_toolbar' in settings.INSTALLED_APPS:
+    try:
+        import debug_toolbar
+    except ImportError:
+        pass
+    else:
+        urlpatterns += patterns('',
+                                url(r'^_debug_/', include(debug_toolbar.urls)),
+                                )
 
 if settings.DEBUG:
     urlpatterns += patterns('', url(r'%s(?P<path>.*)' % settings.MEDIA_URL[1:], 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),)
