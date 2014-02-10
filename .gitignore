@@ -3,7 +3,7 @@
 .coverage
 media/upload/*
 sqlite_database
-#.env
+.env
 *.pyc
 src/
 static/*
