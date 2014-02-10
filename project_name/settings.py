@@ -43,7 +43,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = True
+USE_I18N = False
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale.
@@ -153,6 +153,9 @@ INSTALLED_APPS = (
     'mezzanine.twitter',
 
     #3rd part Application
+    'django_extensions',
+    'debug_toolbar'
+    'compressor',
     'south',
     'test_pep8',
 
@@ -201,16 +204,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'mezzanine.conf.context_processors.settings',
 )
 
-# test_pep8 config
-TEST_PEP8_DIRS = (
-    os.path.dirname(PROJECT_PATH),
-)
-TEST_PEP8_EXCLUDE = (
-    'migrations',
-)  # Exclude this paths from tests
-TEST_PEP8_IGNORE = (
-    'E501',     # 80 chars of line length
-)
 
 
 # Email configuration
@@ -232,3 +225,51 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
+
+
+# Django-extensions
+if 'django_extensions' in INSTALLED_APPS:
+    pass
+
+
+#DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
+if 'debug_toolbar' in INSTALLED_APPS:
+    try:
+        from .conf.debug_toolbar import DEBUG_TOOLBAR_MIDDLEWARE_CLASSES, DEBUG_TOOLBAR_PANELS
+    except:
+        pass
+    else:
+        MIDDLEWARE_CLASSES += DEBUG_TOOLBAR_MIDDLEWARE_CLASSES
+
+## django-test-pep8 conf/
+if 'test_pep8' in INSTALLED_APPS:
+    try:
+        from .conf.test_pep8 import *
+    except:
+        pass
+    else:
+        pass
+
+
+## django-compress
+if 'compressor' in INSTALLED_APPS:
+    try:
+        from .conf.compressor import *
+    except:
+        pass
+    else:
+        pass
+
+if 'grappelli' in INSTALLED_APPS:
+    try:
+        from .conf.grappelli import *
+    except:
+        pass
+    else:
+        pass
+
+if 'filebrowser' in INSTALLED_APPS:
+    try:
+        from .conf.filebrowser import *
+    except:
+        pass
