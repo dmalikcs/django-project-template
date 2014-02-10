@@ -154,7 +154,7 @@ INSTALLED_APPS = (
 
     #3rd part Application
     'django_extensions',
-    'debug_toolbar'
+    'debug_toolbar',
     'compressor',
     'south',
     'test_pep8',
@@ -205,7 +205,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 
-
 # Email configuration
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #EMAIL_HOST = ''
@@ -213,6 +212,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 #EMAIL_HOST_USER = 'webserver@{{ project_name }}.com'
 #EMAIL_HOST_PASSWORD = ''
 #EMAIL_USE_TLS = True
+
+
+INTERNAL_IPS = (
+    '192.168.1.2',
+)
 
 
 PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
@@ -225,6 +229,8 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
+
+
 
 
 # Django-extensions

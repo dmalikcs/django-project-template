@@ -1,17 +1,17 @@
 #-e git://github.com/fusionbox/django-fusionbox.git#egg=django_fusionbox
-mezzanine
-Django
+mezzanine==3.0.8
+Django==1.6.2
 South
 pysqlite
 #Werkzeug
 #django-cachebuster
-#django-compressor
-django-debug-toolbar
+django-compressor
+django-debug-toolbar==1.0.1
 #django-email-bandit
-#django-extensions
+django-extensions==1.3.3
 #django-grappelli
 #django-secure
-django-dotenv
+django-dotenv==1.2
 #pyScss
 #dj-database-url
 ### Fabric
@@ -30,7 +30,7 @@ psycopg2
 ### Running the app from the Procfile
 #honcho
 ### Django pep8 testing
-django-test-pep8
+django-test-pep8==0.1
 #python-memcached
 #flup
-fabric
+fabric==1.8.1
