@@ -231,8 +231,6 @@ else:
     set_dynamic_settings(globals())
 
 
-
-
 # Django-extensions
 if 'django_extensions' in INSTALLED_APPS:
     pass
@@ -264,18 +262,4 @@ if 'compressor' in INSTALLED_APPS:
     except:
         pass
     else:
-        pass
-
-if 'grappelli' in INSTALLED_APPS:
-    try:
-        from .conf.grappelli import *
-    except:
-        pass
-    else:
-        pass
-
-if 'filebrowser' in INSTALLED_APPS:
-    try:
-        from .conf.filebrowser import *
-    except:
         pass

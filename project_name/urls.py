@@ -24,6 +24,17 @@ urlpatterns += i18n_patterns("",
                              ("^admin/", include(admin.site.urls)),
                              )
 
+if 'debug_toolbar' in settings.INSTALLED_APPS:
+    try:
+        import debug_toolbar
+    except ImportError:
+        pass
+    else:
+        urlpatterns += patterns('',
+                                url(r'^_debug_/', include(debug_toolbar.urls)),
+                                )
+
+
 urlpatterns += patterns('',
 
     # We don't want to presume how your homepage works, so here are a
@@ -36,7 +47,7 @@ urlpatterns += patterns('',
     # one homepage pattern, so if you use a different one, comment this
     # one out.
 
-    url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    # url("^$", direct_to_template, {"template": "index.html"}, name="home"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -96,16 +107,6 @@ urlpatterns += patterns('',
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
 # pages can use JS, CSS and images.
-if 'debug_toolbar' in settings.INSTALLED_APPS:
-    try:
-        import debug_toolbar
-    except ImportError:
-        pass
-    else:
-        urlpatterns += patterns('',
-                                url(r'^_debug_/', include(debug_toolbar.urls)),
-                                )
-
 if settings.DEBUG:
     urlpatterns += patterns('', url(r'%s(?P<path>.*)' % settings.MEDIA_URL[1:], 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),)
 
