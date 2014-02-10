@@ -3,7 +3,7 @@ mezzanine==3.0.8
 Django==1.6.2
 South
 pysqlite
-#Werkzeug
+Werkzeug    #django-extensions
 #django-cachebuster
 django-compressor
 django-debug-toolbar==1.0.1
