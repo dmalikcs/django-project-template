@@ -10,3 +10,4 @@ django-admin.py startproject --template=https://github.com/dmalikcs/django-proje
 jenkins
 jenkins
 jenkins
+jenkins
