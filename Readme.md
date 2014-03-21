@@ -6,5 +6,5 @@ Installation
 
 django-admin.py startproject --template=https://github.com/dmalikcs/django-project-template/archive/master.zip -name="Readme.md" project_name
 
-jenkins
-jenkin with test
+jenkin with test #1
+jenkins test
