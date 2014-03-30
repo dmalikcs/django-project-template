@@ -4,8 +4,13 @@ import sys
 import dotenv
 dotenv.read_dotenv()
 
+JENKINS_SERVER = 'ind198lc001.krunksystems.com'
+
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings")
+    if os.uname()[1] == JENKINS_SERVER:
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings_jenkins")
+    else:
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings")
 
     from django.core.management import execute_from_command_line
 

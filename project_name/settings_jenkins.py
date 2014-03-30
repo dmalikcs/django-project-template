@@ -12,3 +12,5 @@ DATABASES = {
         'OPTIONS': {'autocommit': True, }
     }
 }
+
+DEBUG = True
